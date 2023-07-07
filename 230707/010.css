@@ -1,0 +1,14 @@
+body {
+    color: aqua;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+/* 버튼 커서 바꾸기 */
