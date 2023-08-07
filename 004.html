@@ -1,76 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>width</title>
-    <style>
-        p {
-            background: pink;
-        }
-
-        .max-content {
-            width: max-content;
-        }
-
-        .min-content {
-            width: min-content;
-        }
-
-        .fit-content {
-            width: fit-content;
-        }
-
-        .parent {
-            width: 500px;
-            background: gray;
-        }
-
-        .parent p {
-            width: 200px;
-            margin: auto;
-        }
-
-        .parent p {
-            width: 200px;
-            margin: auto 0 auto auto;
-        }
-    </style>
+    <title></title>
 </head>
 
 <body>
-    <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni
-        ipsa
-        eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
-
-    </p>
-    <p class="max-content">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni
-        ipsa
-        eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
-
-    </p>
-    <p class="min-content">
-        Lorem ipsum dolor sit
-
-    </p>
-    <p class="fit-content">
-        Lorem ipsum dolor sit
-    </p>
-
-    <p class="fit-content">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni
-        ipsa
-        eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
-    </p>
-
-    <div class="parent">
-        <p>Lorem ipsum dolor sit</p>
-    </div>
-
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // nodelist와 array는 다릅니다!
+        let div = document.querySelectorAll('div')
+        // 아래 코드는 익스플로러에서 작동하지 않습니다.
+        div.forEach(v => console.log(v))
+        div.forEach(v => v.innerText = 'hi')
+        // 대안: 아래처럼 배열로 바꿔 사용할 수 있습니다!
+        div = [...div]
+    </script>
 </body>
 
 </html>
