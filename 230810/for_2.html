@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        //평균 구하기
+        var value1 = [100, 200, 50, 400, 900];
+        var value2 = [60, 40, 80, 30, 90];
+        function average(value) {
+            var sum = 0;
+            for (var i = 0; i < value.length; i++) {
+                sum += value[i];
+            }
+            return sum / value.length;
+        }
+
+        document.write('평균1 : ', average(value1)); //330
+        document.write('<br>');
+        document.write('평균2 : ', average(value2)); //60
+
+
+        //최댓값 구하기
+        var value = [100, 200, 50, 400, 900];
+        function maximum(value) {
+            var max = 0;
+            for (var i = 0; i < value.length; i++) {
+                if (max < value[i]) {
+                    max = value[i];
+                }
+            }
+            return max;
+        }
+        document.write(maximum(value)); //900
+        document.write('<br>');
+
+        //Math.max.apply() 사용해서 최댓값 구하기
+        var max2 = Math.max.apply(null, value);
+        document.write(max2); //900
+
+
+
+    </script>
+</body>
+
+</html>

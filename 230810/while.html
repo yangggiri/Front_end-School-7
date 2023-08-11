@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+
+        while (조건식) {
+            // 조건식이 참일 때 실행될 코드
+        }
+
+        let num = 0;
+
+        while (num < 11) {
+            document.write(num, '<br>');
+            num += 1;
+        }
+
+
+         **do -while 반복문 **
+
+        do -while 반복문은 조건식이 거짓이더라도 반복문이 최소한 한 번은 실행되어야 할 때 사용됩니다.
+
+        let input;
+
+        do {
+            input = prompt("숫자를 입력하세요.");
+        } while (isNaN(input));
+
+        console.log("입력한 숫자는 " + input + "입니다.");
+
+
+
+        let num = 0;
+
+        do {
+            document.write(num, '<br>');
+            num += 1;
+        } while (num < 11);
+
+
+
+        ### ** 반복문의 break & continue**
+
+            앞서 for문에서 잠시 살펴봤듯, 조건에 따른 종료 이전에 사용자의 개입으로 좀 더 빠른 종료를 원하면 `break` 를 사용하여 반복문에서 나올 수 있습니다. `break`문으로 반복문이 종료되면 그 다음 코드가 차례로 실행됩니다.break 문은 switch 문 만의 전유물이 아니랍니다 🙂
+
+        // 예시 1
+        let num = 0;
+        while (num < 11) {
+            num++;
+            document.write(num, '<br>');
+            if (num > 5) {
+                break;
+            }
+        }
+
+        // 예시 2
+        let i = 0;
+        while (i < 100) {
+            i++;
+            console.log(i + '살 입니다.')
+            if (i === 14) {
+                console.log(i + '살 부터 중학생이 됩니다.');
+                break;
+            }
+        }
+        console.log('중학교 입학을 축하합니다');
+
+
+        ### continue문은 반복문을 완전히 빠져나가는 break와 다르게 반복문의 다음 반복으로 이동합니다.
+
+            for(let i = 0; i < 20; i++) {
+            if (i < 13) continue;
+            console.log(i + '살은 청소년입니다.');
+        }
+
+        ### label
+
+        label은 특정 코드 블록에 이름을 지정하는 방법입니다.이렇게 이름을 지정하면, 코드 블록 내부에서 break나 continue 문의 대상으로 지정할 수 있습니다.
+
+            outer: for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if (i + j === 3) {
+                        break outer;
+                    }
+                    console.log(i, j);
+                }
+            }
+
+        outer: for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (i + j === 3) {
+                    continue outer;
+                }
+                console.log(i, j);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
