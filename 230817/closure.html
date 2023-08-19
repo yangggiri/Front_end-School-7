@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>외부 함수에 대한 접근 권한을 내부 함수에 위임함으로서 폐쇠된 공간 안의 데이터에 접근할 수 있도록 하는 테크닉입니다.
+
+        그러면 왜 사용할까요? 클로저를 사용하면 특정 변수나 함수를 외부에서 접근할 수 없도록 숨길 수 있습니다.</title>
+</head>
+
+<body>
+
+    <script>
+        const person = function () {
+            let age = 15;
+
+            return {
+                name: 'jaehyun',
+
+                getAge() {
+                    return age;
+                },
+
+                setAge(val) {
+                    age = val
+                }
+            }
+        }
+
+        const man = person();
+
+
+
+        const outer = function () {
+            let a = 1;
+
+            const inner = function () {
+                let b = 5;
+                let c = 6;
+                a = a + b + c;
+
+                console.log(a);
+            }
+
+            return inner;
+        }
+
+        const newInner = outer();
+
+        newInner();
+
+
+        const Info = function (name) {
+            let Address = "한국";
+            return {
+                name: name,
+                getAddress() {
+                    return Address;
+                },
+                setAddress(string) {
+                    Address = string;
+                },
+            };
+        };
+
+        const myInfo = Info("지현");
+        myInfo.setAddress("부평");
+
+        console.log(myInfo);
+
+
+        const x = 100;
+
+        function a() {
+            const x = 1;
+            b();
+        }
+
+        function b() {
+            console.log(x);
+        }
+
+        a(); // 100
+        b(); // 100
+
+
+        // 비교대상
+
+        const xx = 100;
+
+        function a() {
+            const xx = 1;
+            function b() {
+                console.log(xx);
+            }
+            b();
+        }
+
+        a();
+
+
+
+
+        function Info(age, address) {
+            this.address = address;
+            this.age = age;
+        }
+        function Person(name, age, address) {
+            const newInfo = new Info(age, address);
+            return {
+                name: name,
+                getInfo() {
+                    return newInfo;
+                },
+                setAge(age) {
+                    this.newInfo.age = age;
+                }
+            }
+        }
+        const my = new Person('지현', 26, "인천");
+        my.getInfo();
+        const you = new Person('멋사', 7, '서울');
+        you.getInfo();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM2</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+        li {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="box">
+            상자
+        </div>
+        <ul>
+            <li>
+                <button class="btn_red">빨강</button>
+            </li>
+            <li>
+                <button class="btn_yellow">노랑</button>
+            </li>
+            <li>
+                <button class="btn_green">초록</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        const btnRed = document.querySelector(".btn_red");
+        const btnYellow = document.querySelector(".btn_yellow");
+        const btnGreen = document.querySelector(".btn_green");
+        let boxBg = document.querySelector(".box");
+
+        btnRed.addEventListener('click', function () {
+            boxBg.style.background = "red";
+        })
+
+        btnYellow.addEventListener('click', function () {
+            boxBg.style.background = "yellow";
+        })
+
+        btnGreen.addEventListener('click', function () {
+            boxBg.style.background = "green";
+        })
+    </script>
+</body>
+
+</html>
