@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        class Robot {
+            constructor(name) {
+                this.myName = name;
+            }
+            sayYourName() {
+                console.log(`제 이름은 ${this.myName} 입니다.`)
+            }
+        }
+
+
+        const me = {
+            name: '한재현',
+            address: '제주도 제주시 인다 1길',
+            phoneNum: '010-8000-0000',
+            canWalk: function () {
+                console.log('재현이가 걷는다.');
+            },
+            teaching: function (student) {
+                student.levelUp();
+            }
+        }
+
+        const lion = {
+            level: 1,
+            levelUp: function () {
+                this.level++;
+            }
+        }
+
+
+        class Me {
+            constrocter() {
+                this.name = '한재현';
+                this.address = '제주도';
+                this.phoneNum = '010';
+            }
+
+            canWalk() {
+                console.log('재현이가 걷는다.');
+            };
+
+            teaching(student) {
+                student.levelUp();
+            };
+        };
+        class Lion {
+            constructor() {
+                this.level = 1;
+            }
+
+            levelUp() {
+                this.level++;
+            };
+        };
+
+
+        //----------------------------------//
+
+        function Slave(이름, 경력) {
+            this.이름 = 이름,
+                this.경력 = 경력
+            console.log(`새로운 Slave가 도착하였습니다. 집사이름 : ${this.이름} 집사경력 : ${this.경력}`)
+        }
+
+        Slave.prototype.serving = function (lord) {
+            lord.CIAO();
+        }
+
+        let 이주연 = new Slave('이주연', 7);
+
+
+
+        function Lord(name, happy, angry, tired, bored) {
+            this.name = name,
+                this.happy = happy,
+                this.angry = angry,
+                this.tired = tired,
+                this.bored = bored,
+
+                console.log(`${this.name}주인님의 현재 행복지수는 ${happy}, 짜증지수는 ${angry}, 피곤함은 ${tired}, 지루함은 ${bored} 이렇습니다. 집사는 얼른 맛있는 츄르를 가져다드리세요 `)
+        }
+
+
+
+        class Slave {
+            constructor(이름, 경력) {
+                this.이름 = 이름;
+                this.경력 = 경력;
+            }
+
+            serving(lord) {
+                lord.CIAO();
+            }
+        }
+
+        class Load {
+            constructor() {
+                this.happy = happy;
+                this.angry = angry;
+                this.tired = tired;
+                this.bored = bored;
+            }
+            CIAO() {
+                this.happy++;
+                this.angry--;
+                this.tired--;
+                this.bored--;
+            }
+        }
+    </script>
+</body>
+
+</html>
